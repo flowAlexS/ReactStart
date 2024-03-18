@@ -94,7 +94,7 @@ export default function Game(){
     let description = move > 0 ? `Go to move ${move}` : 'Go to game start';
 
     return (
-      <li>
+      <li key={move}>
         <button onClick={() => JumpTo(move)}>{description}</button>
       </li>
     )
