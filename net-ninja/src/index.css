@@ -70,6 +70,12 @@
   cursor: pointer;
 }
 
+.blog-details button:hover {
+  background: #f00;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
 /* create new blog form */
 .create {
   max-width: 400px;
