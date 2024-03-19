@@ -71,7 +71,8 @@
   cursor: pointer;
 }
 
-.blog-details button:hover {
+.blog-details button:hover,
+.create button:hover {
   background: #f00;
   transform: scale(1.1);
   transition: 0.5s;
