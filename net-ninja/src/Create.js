@@ -22,7 +22,7 @@ const Create = () => {
         .then(() => {
             console.log('new blog Added');
             setIsPending(false);
-            history.push('/')
+            history.push('/');
         })
     }
 
