@@ -1,26 +1,15 @@
-import { useState, useEffect } from "react";
+import useFetch from "./UseFetch";
 import BlogList from "./BlogList";
 import { type } from "@testing-library/user-event/dist/type";
 
 const Home = () => {
-    const [blogs, setBlogs] = useState(null);
-    const [isPending, setIsPending] = useState(true);
-
-    useEffect(() => {
-        fetch("http://localhost:8000/blogs")
-        .then(res => {
-            return res.json();
-        })
-        .then((data) => {
-            setBlogs(data);
-            setIsPending(false);
-        })
-    }, []);
+    const {data, isPending, error} = useFetch("http://localhost:8000/blogs");
 
     return (
         <div className="home">
+            { error && <div> { error } </div> }
           { isPending && <div>Loading...</div> }
-          { blogs && <BlogList blogs={ blogs } title={ "All Blogs!" }/> }
+          { data && <BlogList blogs={ data } title={ "All Blogs!" }/> }
         </div>
     );
 }
