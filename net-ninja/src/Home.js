@@ -1,6 +1,5 @@
 import useFetch from "./UseFetch";
 import BlogList from "./BlogList";
-import { type } from "@testing-library/user-event/dist/type";
 
 const Home = () => {
     const {data, isPending, error} = useFetch("http://localhost:8000/blogs");
